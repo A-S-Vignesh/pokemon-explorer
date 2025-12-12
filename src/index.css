@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+
+body,html{
+  overflow-x: clip;
+}
