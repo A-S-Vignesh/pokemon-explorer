@@ -4,7 +4,6 @@ import type { FC } from "react";
 import { useGSAP } from "@gsap/react";
 import { typeGradients } from "../utils/typeGradients";
 import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
 import { Heart, Star } from "lucide-react";
 import { getPokemonRegion } from "../utils/getRegion";
 
@@ -31,7 +30,6 @@ interface PokemonCardProps {
 }
 
 const PokemonCard: FC<PokemonCardProps> = ({ pokemon, className = "" }) => {
-  const navigate = useNavigate();
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const [isFavorite, setIsFavorite] = useState(false);

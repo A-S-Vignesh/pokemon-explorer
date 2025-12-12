@@ -2,13 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import type { ChangeEvent } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import {
-  Search,
-  X,
-  Sparkles,
-  ChevronDown,
-  Loader2,
-} from "lucide-react";
+import { Search, X, Sparkles, ChevronDown } from "lucide-react";
 import { allPokemon } from "../utils/allPokemon";
 import { useNavigate } from "react-router-dom";
 import { popularPokemon } from "../utils/allPokemon";
@@ -17,7 +11,6 @@ const SearchBar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const [isFocused, setIsFocused] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState<
     { name: string; url: string }[]
@@ -26,7 +19,6 @@ const SearchBar: React.FC = () => {
     name: string;
     url: string;
   }>(null);
-
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -123,7 +115,7 @@ const SearchBar: React.FC = () => {
     const num = parseInt(term);
     if (!isNaN(num) && num >= 1 && num <= 1025) {
       //ignore p is not declared problem
-      const matchById = allPokemon.find((p, index) => index + 1 === num);
+      const matchById = allPokemon.find((_, index) => index + 1 === num);
       if (matchById) filtered = [matchById, ...filtered];
     }
 
@@ -133,7 +125,7 @@ const SearchBar: React.FC = () => {
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!searchTerm.trim() || isSearching) return;
+    if (!searchTerm.trim()) return;
     navigate(`/pokemon/${searchTerm.toLowerCase()}`);
   };
 
@@ -165,11 +157,7 @@ const SearchBar: React.FC = () => {
             {/* Search Icon */}
             <div className="relative flex items-center">
               <div className="search-icon pl-4 pr-3">
-                {isSearching ? (
-                  <Loader2 className="w-5 h-5 text-amber-500 animate-spin" />
-                ) : (
-                  <Search className="w-5 h-5 text-amber-500" />
-                )}
+                <Search className="w-5 h-5 text-amber-500" />
               </div>
 
               {/* Search Input */}
@@ -206,13 +194,12 @@ const SearchBar: React.FC = () => {
             <button
               type="submit"
               disabled={
-                isSearching ||
                 !searchTerm ||
                 (!selectedSuggestion && !isExactPokemonName(searchTerm))
               }
               className="ml-2 px-6 py-3 bg-linear-to-r from-amber-500 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
-              {isSearching ? "Searching..." : "Search"}
+              Search
             </button>
           </div>
         </form>

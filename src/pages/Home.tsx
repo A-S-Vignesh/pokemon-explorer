@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PokemonCard from "../components/PokemonCard";
 import {
-  Sparkles,
   Zap,
   Flame,
   Droplets,
@@ -31,7 +30,7 @@ export default function Home() {
 
   const [showSearch, setShowSearch] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
+  // const [showScrollTop, setShowScrollTop] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -158,9 +157,9 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isLoadingMore, fetchNextPage]);
 
-  const scrollToTop = () => {
-    gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2.inOut" });
-  };
+  // const scrollToTop = () => {
+  //   gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2.inOut" });
+  // };
 
   const typeIcons = [
     { type: "electric", icon: <Zap className="w-4 h-4" /> },
@@ -398,14 +397,14 @@ export default function Home() {
       </div>
 
       {/* Scroll to Top Button */}
-      {showScrollTop && (
+      {/* {showScrollTop && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 w-14 h-14 bg-linear-to-r from-amber-500 to-yellow-400 text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 hover:rotate-180 transition-all duration-300 z-40"
         >
           <ChevronDown className="w-6 h-6 transform rotate-180" />
         </button>
-      )}
+      )} */}
 
       {/* Footer */}
       <footer className="border-t border-yellow-100 bg-linear-to-b from-white to-amber-50">

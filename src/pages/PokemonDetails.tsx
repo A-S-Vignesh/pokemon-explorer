@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { typeGradients } from "../utils/typeGradients";
-import { useParams, useNavigate, redirect } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import {
@@ -105,7 +105,7 @@ export default function PokemonDetails() {
         ".stat-bar",
         { width: 0, opacity: 0 },
         {
-          width: (i, target) => target.getAttribute("data-width"),
+          width: (_, target) => target.getAttribute("data-width"),
           opacity: 1,
           duration: 1.5,
           stagger: 0.1,
