@@ -63,16 +63,21 @@ Each Pokémon page includes:
 ---
 
 ## 📸 Screenshots
-*(Add screenshots here if needed)*
+```md
+![Home Page](screenshots/home.png)
+![Pokémon Details](screenshots/details.png)
+![Type Filter](screenshots/filter.png)
+```
 
 ---
 
 ## 🚀 Installation & Setup
 
 ### 1️⃣ Clone the repository
+```bash
 git clone https://github.com/A-S-Vignesh/pokemon-explorer.git
 cd pokemon-explorer
-
+```
 
 ### 2️⃣ Install dependencies
 
