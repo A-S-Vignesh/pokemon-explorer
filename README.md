@@ -63,11 +63,15 @@ Each Pokémon page includes:
 ---
 
 ## 📸 Screenshots
-```md
+
+### 🏠 Home Page
 ![Home Page](screenshots/home.png)
+
+### 📄 Pokémon Details
 ![Pokémon Details](screenshots/details.png)
+
+### 🧩 Type Filter
 ![Type Filter](screenshots/filter.png)
-```
 
 ---
 
