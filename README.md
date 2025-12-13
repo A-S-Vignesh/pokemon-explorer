@@ -76,22 +76,34 @@ cd pokemon-explorer
 
 ### 2️⃣ Install dependencies
 
+```bash
 npm install
-
+```
 ### 3️⃣ Run development server
-
+```bash
 npm run dev
-
+```
 ### 4️⃣ Build for production
+```bash
 npm run build
-
+```
 ### 5️⃣ Preview production build
+```bash
 npm run preview
+```
+---
 
 ## 📁 Project Structure
+
+```text
 pokemon-explorer/
-│
 ├── public/
+│
+├── screenshots/
+│   ├── home.png
+│   ├── details.png
+│   └── filter.png
+│
 ├── src/
 │   ├── components/
 │   ├── pages/
@@ -105,7 +117,11 @@ pokemon-explorer/
 │   ├── App.tsx
 │   └── main.tsx
 │
-└── vercel.json
+├── vercel.json
+├── package.json
+└── README.md
+```
+---
 
 ## 🌟 Future Improvements
 - Evolution chain visualization
@@ -138,12 +154,3 @@ This project is licensed under the **MIT License**.
 GitHub: https://github.com/A-S-Vignesh
 
 ---
-
-### Want more?
-If you want, I can also:
-- ✅ Add **badges** (Vercel, License, React, Vite)
-- ✅ Create a **project banner image**
-- ✅ Optimize the README for **recruiters**
-- ✅ Add **dark mode screenshots**
-
-Just say the word 🚀
